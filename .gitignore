@@ -1,3 +1,23 @@
+# 5500 selfies
+data/raw/selfies/SCUT-FBP5500_v2/Images/
+SCUT-FBP5500_v2.1.zip
+
+# Any files contaning frame data
+*.csv
+*.xlsx
+
+# Any fram images
+demo/glasses/**/*.[jJ][pP][g]
+demo/glasses/**/*.[jJ][pP][eE][g]
+demo/glasses/**/*.[pP][nN][g]
+
+data/raw/glasses/**/*.[jJ][pP][g]
+data/raw/glasses/**/*.[jJ][pP][eE][g]
+data/raw/glasses/**/*.[pP][nN][g]
+
+
+project_plan.md
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -51,6 +51,7 @@ genai-virtual-glasses-tryon/
 │       └── static/                # CSS, JS, webcam script, glasses
 |
 │── Image_processing
+│   ├── download_selfies.py    # Download selfies from the open Google Drive sharing link
 │   ├── image_io.py            # Load/save images
 │   ├── face_utils.py          # Face detection, MediaPipe landmarks extraction
 │   ├── overlay.py             # Glasses-face alignment logic, overplaying glasses on the selfie
@@ -67,10 +68,14 @@ genai-virtual-glasses-tryon/
 ├── notebooks/               # Prototyping notebooks, for early-stage testing
 │   ├── landmarks_explore.ipynb
 │   └── model_experiment.ipynb
+|
+├── demo/                    # Simple demo for images overlay
+│   ├── demo_tryon.py          # Scripts to run the demo
 │
-├── main.py                     # Script to start app or model
+├── main.py                  # Script to start app or model
+├── path_utils.py            # Path management
 ├── README.md
-└── requirements.txt           # Python dependency list
+└── requirements.txt         # Python dependency list
 
 ```
 
