@@ -32,7 +32,7 @@ with zipfile.ZipFile(zip_file_name, 'r') as zip_ref:
         if f"{SELECTED_FOLDER}/" in file and file.lower().endswith((".jpg", ".jpeg", ".png")):
             zip_ref.extract(file, extract_folder)
 
-print("Done. Images extracted to:", os.path.join(extract_folder, "Image"))
+print("Done. Images extracted to:", os.path.join(extract_folder, SELECTED_FOLDER))
 
 image_files = glob(os.path.join(extract_folder, SELECTED_FOLDER, "*.jpg"))
  

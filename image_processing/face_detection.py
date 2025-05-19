@@ -35,3 +35,20 @@ def get_eye_centers(image):
         right_eye = np.mean([(landmarks[i].x * w, landmarks[i].y * h) for i in RIGHT_EYE], axis=0)
 
         return np.array(left_eye), np.array(right_eye)
+
+def get_eye_centers_2(image_rgb):
+    mp_face_mesh = mp.solutions.face_mesh
+    with mp_face_mesh.FaceMesh(static_image_mode=True, max_num_faces=1) as face_mesh:
+        results = face_mesh.process(image_rgb)
+        if not results.multi_face_landmarks:
+            return None
+
+        landmarks = results.multi_face_landmarks[0].landmark
+        ih, iw = image_rgb.shape[:2]
+        left_eye_idx = [33, 133]
+        right_eye_idx = [362, 263]
+
+        left_eye = np.mean([(landmarks[i].x * iw, landmarks[i].y * ih) for i in left_eye_idx], axis=0)
+        right_eye = np.mean([(landmarks[i].x * iw, landmarks[i].y * ih) for i in right_eye_idx], axis=0)
+
+        return np.array(left_eye), np.array(right_eye)

@@ -1,6 +1,7 @@
 import cv2
+from PIL import Image
 import numpy as np
-from .face_detection import get_eye_centers
+from .face_detection import get_eye_centers, get_eye_centers_2
 
 def overlay_glasses(selfie_rgb, glasses_img, left_eye, right_eye):
     # Resize glasses
@@ -60,3 +61,60 @@ def fuse_glasses_to_face(face_img, glasses_img):
     fused = cv2.seamlessClone(aligned_glasses, face_img, mask, center, cv2.NORMAL_CLONE)
 
     return fused
+
+
+def resize_glasses_to_face(glasses_rgba_pil: Image.Image, left_eye, right_eye, scale_factor=1.8) -> Image.Image:
+    """
+    Resize the glasses image based on eye distance and a scale factor.
+    """
+    eye_distance = np.linalg.norm(np.array(right_eye) - np.array(left_eye))
+    target_width = int(eye_distance * scale_factor)
+
+    original_width, original_height = glasses_rgba_pil.size
+    aspect_ratio = original_height / original_width
+    target_height = int(target_width * aspect_ratio)
+
+    resized = glasses_rgba_pil.resize((target_width, target_height), Image.LANCZOS)
+    return resized
+
+
+def overlay_glasses_on_face(face_rgb: np.ndarray, glasses_rgba_pil: Image.Image) -> np.ndarray:
+    """
+    Align and overlay RGBA glasses image onto the RGB face image.
+    """
+    left_eye, right_eye = get_eye_centers_2(face_rgb)
+
+    # Resize glasses based on eye distance
+    glasses_rgba_pil = resize_glasses_to_face(glasses_rgba_pil, left_eye, right_eye)
+
+    glasses_rgba = np.array(glasses_rgba_pil)
+    gh, gw = glasses_rgba.shape[:2]
+
+    # Define glasses' left and right lens center in glasses image (as fractions of width)
+    glasses_left_center_x = int(gw * 0.3)   # ~30% from left
+    glasses_right_center_x = int(gw * 0.7)  # ~70% from left
+    glasses_center_y = gh // 2               # vertical center
+
+    # Calculate top-left corner to place the glasses so that
+    # glasses_left_center aligns with left_eye,
+    # glasses_right_center aligns with right_eye.
+    # Compute the offset by averaging the required position:
+    offset_x = int((left_eye[0] - glasses_left_center_x + right_eye[0] - glasses_right_center_x) / 2)
+    offset_y = int(left_eye[1] - glasses_center_y)  # Assume vertical alignment with left eye
+
+    face_bgr = cv2.cvtColor(face_rgb, cv2.COLOR_RGB2BGR)
+    alpha = glasses_rgba[:, :, 3] / 255.0
+
+    for y in range(gh):
+        for x in range(gw):
+            fx = offset_x + x
+            fy = offset_y + y
+            if 0 <= fx < face_bgr.shape[1] and 0 <= fy < face_bgr.shape[0]:
+                for c in range(3):
+                    face_bgr[fy, fx, c] = (
+                        alpha[y, x] * glasses_rgba[y, x, c] +
+                        (1 - alpha[y, x]) * face_bgr[fy, fx, c]
+                    )
+
+    face_out = cv2.cvtColor(face_bgr, cv2.COLOR_BGR2RGB)
+    return face_out
