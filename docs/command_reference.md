@@ -8,13 +8,13 @@
 python simple_pipeline.py --mode single
 
 # Specific selfie (random glasses)
-python simple_pipeline.py --mode single --selfie-id 1081
+python simple_pipeline.py --mode single --selfie-id 1215
 
 # Specific glasses (random selfie)
-python simple_pipeline.py --mode single --glasses-id "ca8a573e-3549-46b7-8d9d-8d84f336199f"
+python simple_pipeline.py --mode single --glasses-id "689e52b6-3560-45c6-b2e0-a00182f4ab03"
 
 # Specific combination
-python simple_pipeline.py --mode single --selfie-id 1081 --glasses-id "ca8a573e-3549-46b7-8d9d-8d84f336199f"
+python simple_pipeline.py --mode single --selfie-id 1215 --glasses-id "689e52b6-3560-45c6-b2e0-a00182f4ab03"
 ```
 
 ### Batch Processing
@@ -27,15 +27,15 @@ python simple_pipeline.py --mode batch --batch-size 20
 
 # Large batch (50 combinations)
 python simple_pipeline.py --mode batch --batch-size 50
+
+# Batch without saving (testing only)
+python simple_pipeline.py --mode batch --batch-size 10 --no-save
 ```
 
 ### Data Exploration
 ```bash
 # See available data
 python avai_data.py
-
-# Interactive demo
-python demo/simple_demo.py
 
 # Complete demo with dataset download
 python demo/run_demo.py
