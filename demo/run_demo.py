@@ -254,19 +254,27 @@ class VirtualTryOnDemo:
                 output_dir.mkdir(exist_ok=True)
                 
                 # Extract clean names
-                selfie_name = Path(selfie['filename']).stem  # Remove extension
+                selfie_img_name = selfie['filename']
+                selfie_name = Path(selfie_img_name).stem  # Remove extension
                 glasses_name = f"{glasses['brand']}_{glasses['title']}".replace(' ', '_').replace('/', '_')
                 
                 # Create meaningful filename
                 save_path = str(output_dir / f"{selfie_name}_{glasses_name}.jpg")
             
+            glasses_url = glasses['main_image']
             # Run virtual try-on
             result_img = main_tryon_from_binary(
                 selfie['image_data'],
-                glasses['main_image'],
+                glasses_url,
                 save_result=save_path
             )
             
+            logger.info(f"Selfie iamge name: {selfie_img_name}")
+            logger.info(f"Glasses image url: {glasses_url}")
+            gl_ext = glasses_url.split('.')[-1] # Extract the image extension of glasses
+            if gl_ext not in ("png", "webp"):
+                 logger.info(f"Virtual try-on funtion does not working well if glasses image are of .{gl_ext}")
+                 logger.info(f"Because the glasses image should have the alpha channel")
             logger.info("✅ Virtual try-on completed successfully!")
             
             return {

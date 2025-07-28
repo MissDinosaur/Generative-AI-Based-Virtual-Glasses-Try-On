@@ -1,5 +1,5 @@
 # 5500 selfies
-data/raw/selfies/SCUT-FBP5500_v2/Images/
+data/
 SCUT-FBP5500_v2.1.zip
 
 # Any files contaning frame data
@@ -7,17 +7,10 @@ SCUT-FBP5500_v2.1.zip
 *.xlsx
 
 # Any fram images
-demo/glasses/**/*.[jJ][pP][g]
-demo/glasses/**/*.[jJ][pP][eE][g]
-demo/glasses/**/*.[pP][nN][g]
+demo/glasses/
 demo/output/*.[jJ][pP][g]
-
-data/raw/glasses/**/*.[jJ][pP][g]
-data/raw/glasses/**/*.[jJ][pP][eE][g]
-data/raw/glasses/**/*.[pP][nN][g]
-
-
-project_plan.md
+demo/output/*.[jJ][pP][eE][g]
+demo/output/*.[pP][nN][g]
 
 # Python
 __pycache__/
@@ -92,10 +85,6 @@ htmlcov/
 # Documentation builds
 docs/_build/
 site/
-
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
 
 # Project-specific data files - LARGE FILES
 SCUT-FBP5500_v2.1/
