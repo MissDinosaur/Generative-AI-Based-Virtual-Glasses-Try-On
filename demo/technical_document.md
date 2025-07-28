@@ -5,6 +5,8 @@
 This virtual try-on system overlays glasses onto a selfie image using facial landmarks. It aims to position the glasses naturally on the nose bridge, respecting the geometry and size of the user’s face.
 
 Here, how to overlay the glasses onto selfie according to the geometry of face and glasses is explained.
+
+And the full python implementation is wrritten in demo/kernal_codes_demo.ipynb which you can test your slfie and glasses url directly.
 ---
 
 ## Technical Workflow
