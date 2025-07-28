@@ -87,25 +87,31 @@ python simple_pipeline.py --mode single --selfie-id 1215 --glasses-id "689e52b6-
 virtual-tryon-project/
 ├── 📁 config/
 │   └── database_config.py          # Database connection & configuration
+│
 ├── 📁 data_processing/
 │   ├── dataset_downloader.py       # SCUT dataset download & extraction
 │   └── selfie_processor.py         # Image processing & database storage
+│
 ├── 📁 database/
 │   └── table_creator.py            # Database schema creation
+│
 ├── 📁 core/
 │   ├── virtual_tryon.py            # Main try-on algorithms
 │   └── image_utils.py              # Image processing utilities
+│
 ├── 📁 demo/
 │   ├── run_demo.py                 # Complete demonstration script
-│   └── simple_demo.py              # Interactive demo interface
+│   └── kernal_codes_demo.ipynb     # Kernal codes centralized in one notebook, used to do fast experiment
+│
 ├── 📁 evaluation/
 │   ├── accuracy_calculator.py      # Quality metrics & evaluation
 │   └── results/                    # Evaluation reports
-├── 📁 output/                      # Generated try-on results
-├── requirements.txt                # Python dependencies
+│
+├── 📁 output/                     # Generated try-on results
+│
 ├── setup.py                       # Project setup script
 ├── avai_data.py                   # Data exploration utility
-└── simple_pipeline.py            # Command-line interface
+└── simple_pipeline.py             # Command-line interface
 ```
 
 ## 🔬 Technical Deep Dive

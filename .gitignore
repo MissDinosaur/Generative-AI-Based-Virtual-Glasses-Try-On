@@ -1,7 +1,7 @@
 # 5500 selfies
 data/
 SCUT-FBP5500_v2.1.zip
-
+notebooks/
 # Any files contaning frame data
 *.csv
 *.xlsx
