@@ -75,7 +75,7 @@ site/
 .ipynb_checkpoints/
 *.ipynb
 
-# Project-specific data files
+# Project-specific data files - LARGE FILES
 SCUT-FBP5500_v2.1/
 SCUT-FBP5500_v2.1.zip
 *.zip
