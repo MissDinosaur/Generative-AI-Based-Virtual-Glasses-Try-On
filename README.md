@@ -372,3 +372,14 @@ For questions or issues:
 
 ---
 
+## 📥 Dataset Download
+
+The SCUT-FBP5500 dataset (171MB) is automatically downloaded when you run the demo:
+
+```bash
+# Dataset will be downloaded automatically
+python demo/run_demo.py
+```
+
+**Note**: The dataset is not included in the repository due to size constraints. It will be downloaded from Google Drive on first run.
+
