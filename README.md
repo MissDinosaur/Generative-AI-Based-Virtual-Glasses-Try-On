@@ -76,6 +76,9 @@ python simple_pipeline.py --mode single
 
 # Batch processing
 python simple_pipeline.py --mode batch --batch-size 10
+
+# Specific combinations
+python simple_pipeline.py --mode single --selfie-id 1215 --glasses-id "689e52b6-3560-45c6-b2e0-a00182f4ab03"
 ```
 
 ## 📁 Project Architecture

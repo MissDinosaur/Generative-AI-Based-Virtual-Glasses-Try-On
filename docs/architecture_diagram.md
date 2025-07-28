@@ -3,7 +3,7 @@
 ## 📊 System Overview
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│                        VIRTUAL GLASSES TRY-ON SYSTEM                           │
+│                        VIRTUAL GLASSES TRY-ON SYSTEM                            │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
@@ -37,12 +37,12 @@
                                                           │
                                                           ▼
 2. DATABASE STORAGE                                ┌─────────────────┐
-   ┌─────────────────────────────────────────────►│ PostgreSQL DB   │
+   ┌─────────────────────────────────────────────► │ PostgreSQL DB   │
    │                                               │ • selfies table │
-   │  ┌─────────────────┐    ┌─────────────────┐  │ • frames table  │
-   │  │ Frames Data     │    │ Table Creator   │  │ • Binary data   │
-   │  │ (Existing)      │───►│ • Schema setup  │──┤ • Metadata      │
-   │  │ • Brand/Title   │    │ • Indexes       │  └─────────────────┘
+   │  ┌─────────────────┐    ┌─────────────────┐   │ • frames table  │
+   │  │ Frames Data     │    │ Table Creator   │   │ • Binary data   │
+   │  │ (Existing)      │───►│ • Schema setup  │ ──┤ • Metadata      │
+   │  │ • Brand/Title   │    │ • Indexes       │   └─────────────────┘
    │  │ • Images        │    │ • Constraints   │
    │  └─────────────────┘    └─────────────────┘
    │
@@ -55,7 +55,7 @@
       └─────────────────┘    └─────────────────┘    └─────────────────┘
                                                               │
                                                               ▼
-4. VIRTUAL TRY-ON ENGINE                              ┌─────────────────┐
+4. VIRTUAL TRY-ON ENGINE                            ┌─────────────────┐
    ┌─────────────────┐    ┌─────────────────┐       │ Overlay Engine  │
    │ Image Alignment │◄───│ Core Algorithm  │◄──────│ • Alpha blend   │
    │ • Scale/Rotate  │    │ • Position calc │       │ • Edge smooth   │
@@ -63,7 +63,7 @@
    └─────────────────┘    └─────────────────┘       └─────────────────┘
                                    │
                                    ▼
-5. OUTPUT & EVALUATION             ┌─────────────────┐
+5. OUTPUT & EVALUATION            ┌─────────────────┐
    ┌─────────────────┐            │ Result Image    │
    │ Quality Metrics │◄───────────│ • Composite     │
    │ • Alignment     │            │ • Realistic     │

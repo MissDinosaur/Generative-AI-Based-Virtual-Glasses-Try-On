@@ -247,12 +247,18 @@ class VirtualTryOnDemo:
             logger.info(f"👤 Selfie: {selfie['filename']} ({selfie['gender']}, {selfie['race']})")
             logger.info(f"👓 Glasses: {glasses['brand']} - {glasses['title']}")
             
-            # Prepare save path
+            # Prepare save path with meaningful names
             save_path = None
             if save_result:
                 output_dir = project_root / "output"
                 output_dir.mkdir(exist_ok=True)
-                save_path = str(output_dir / f"tryon_{selfie['id']}_{glasses['id']}.jpg")
+                
+                # Extract clean names
+                selfie_name = Path(selfie['filename']).stem  # Remove extension
+                glasses_name = f"{glasses['brand']}_{glasses['title']}".replace(' ', '_').replace('/', '_')
+                
+                # Create meaningful filename
+                save_path = str(output_dir / f"{selfie_name}_{glasses_name}.jpg")
             
             # Run virtual try-on
             result_img = main_tryon_from_binary(
