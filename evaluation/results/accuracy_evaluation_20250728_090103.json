@@ -1,0 +1,237 @@
+{
+  "timestamp": "2025-07-28T09:01:03.864156",
+  "summary": {
+    "total_samples": 20,
+    "successful_runs": 20,
+    "success_rate": 1.0,
+    "avg_alignment_score": 0.9858068014640662,
+    "avg_realism_score": 0.7379884007070381,
+    "avg_preservation_score": 0.5911819458007812,
+    "avg_overall_accuracy": 0.7930738245379723,
+    "std_overall_accuracy": 0.046093711051962506,
+    "min_accuracy": 0.7304859595714464,
+    "max_accuracy": 0.8997974909659008
+  },
+  "detailed_results": [
+    {
+      "selfie_id": 1462,
+      "selfie_filename": "CF334.jpg",
+      "glasses_id": "aa0931ae-e945-4579-af54-02ae0938fed8",
+      "glasses_brand": "FRAIMS",
+      "alignment_score": 0.9932201011313724,
+      "realism_score": 0.7563259460990202,
+      "preservation_score": 0.46409912109375,
+      "overall_accuracy": 0.76341556061038,
+      "success": true
+    },
+    {
+      "selfie_id": 1193,
+      "selfie_filename": "CF294.jpg",
+      "glasses_id": "c9b42797-3ec2-48d2-825f-39407a261540",
+      "glasses_brand": "Marc O'Polo",
+      "alignment_score": 0.9435877334197377,
+      "realism_score": 0.6640859146586312,
+      "preservation_score": 0.5491536458333333,
+      "overall_accuracy": 0.7414069615154844,
+      "success": true
+    },
+    {
+      "selfie_id": 1303,
+      "selfie_filename": "AF145.jpg",
+      "glasses_id": "92b6f756-2d22-4fa9-a571-f7307761f278",
+      "glasses_brand": "Etnia Barcelona",
+      "alignment_score": 0.9874830632989231,
+      "realism_score": 0.7267044150777751,
+      "preservation_score": 0.490618896484375,
+      "overall_accuracy": 0.7601902187882142,
+      "success": true
+    },
+    {
+      "selfie_id": 1444,
+      "selfie_filename": "AM402.jpg",
+      "glasses_id": "bb01175d-fb23-4969-9bad-dda656f2d960",
+      "glasses_brand": "Carolina Herrera",
+      "alignment_score": 0.9845001494675725,
+      "realism_score": 0.7976612644121052,
+      "preservation_score": 0.6194966634114583,
+      "overall_accuracy": 0.818947438134098,
+      "success": true
+    },
+    {
+      "selfie_id": 1121,
+      "selfie_filename": "AM1649.jpg",
+      "glasses_id": "f8e43756-5cde-46b0-b39f-1a6eb9c16c50",
+      "glasses_brand": "Marc O'Polo",
+      "alignment_score": 0.9945175709419196,
+      "realism_score": 0.7100245006771484,
+      "preservation_score": 0.8666666666666667,
+      "overall_accuracy": 0.8708143785799124,
+      "success": true
+    },
+    {
+      "selfie_id": 1135,
+      "selfie_filename": "AF1377.jpg",
+      "glasses_id": "38d591ef-6a55-4ffc-abdf-a5b95361368b",
+      "glasses_brand": "Fendi",
+      "alignment_score": 0.9912333570768339,
+      "realism_score": 0.7907084076426982,
+      "preservation_score": 0.5756734212239583,
+      "overall_accuracy": 0.8064078914907304,
+      "success": true
+    },
+    {
+      "selfie_id": 1264,
+      "selfie_filename": "AM212.jpg",
+      "glasses_id": "74667b5c-37c0-4045-83d6-211873769836",
+      "glasses_brand": "Fraims Nature",
+      "alignment_score": 0.98099454358146,
+      "realism_score": 0.6986889894212076,
+      "preservation_score": 0.428271484375,
+      "overall_accuracy": 0.7304859595714464,
+      "success": true
+    },
+    {
+      "selfie_id": 1150,
+      "selfie_filename": "AM1305.jpg",
+      "glasses_id": "1c23946b-febe-4563-8b80-f7eef34c5f66",
+      "glasses_brand": "Persol",
+      "alignment_score": 0.9925279708210606,
+      "realism_score": 0.7239577996369262,
+      "preservation_score": 0.452288818359375,
+      "overall_accuracy": 0.7498851737273147,
+      "success": true
+    },
+    {
+      "selfie_id": 1345,
+      "selfie_filename": "AM602.jpg",
+      "glasses_id": "2db50252-acb9-4b7b-a8e8-a31903cbf43d",
+      "glasses_brand": "Boss",
+      "alignment_score": 0.9855601861741784,
+      "realism_score": 0.6817310790874384,
+      "preservation_score": 0.7817321777343751,
+      "overall_accuracy": 0.8332630515162155,
+      "success": true
+    },
+    {
+      "selfie_id": 1417,
+      "selfie_filename": "AF580.jpg",
+      "glasses_id": "f3c88254-9171-4829-bd9d-0d24b64c5ed3",
+      "glasses_brand": "Hamilton",
+      "alignment_score": 0.9926931543116131,
+      "realism_score": 0.8090674308041852,
+      "preservation_score": 0.8666666666666667,
+      "overall_accuracy": 0.8997974909659008,
+      "success": true
+    },
+    {
+      "selfie_id": 1214,
+      "selfie_filename": "AF1001.jpg",
+      "glasses_id": "246460f7-a1f2-4b9f-a871-630cd556daae",
+      "glasses_brand": "Eyesb\u00e4r",
+      "alignment_score": 0.9946520024080381,
+      "realism_score": 0.7565661212181574,
+      "preservation_score": 0.6000000000000001,
+      "overall_accuracy": 0.8048306373286626,
+      "success": true
+    },
+    {
+      "selfie_id": 1351,
+      "selfie_filename": "AF964.jpg",
+      "glasses_id": "6e726597-d0dd-45fe-b64e-c6f21d79b4ae",
+      "glasses_brand": "Air Lite",
+      "alignment_score": 0.9918606835639715,
+      "realism_score": 0.7738858898263424,
+      "preservation_score": 0.493426513671875,
+      "overall_accuracy": 0.7769379944750539,
+      "success": true
+    },
+    {
+      "selfie_id": 1433,
+      "selfie_filename": "AM1676.jpg",
+      "glasses_id": "143357ea-b172-4698-9c12-51ab34df6420",
+      "glasses_brand": "Andy Wolf",
+      "alignment_score": 0.9807520148797972,
+      "realism_score": 0.7380405484782658,
+      "preservation_score": 0.6000000000000001,
+      "overall_accuracy": 0.7937129704953987,
+      "success": true
+    },
+    {
+      "selfie_id": 1344,
+      "selfie_filename": "CF487.jpg",
+      "glasses_id": "01dfd365-782b-4bf9-8700-2a01c4157787",
+      "glasses_brand": "Oliver Peoples",
+      "alignment_score": 0.9859286073139297,
+      "realism_score": 0.6587057275485261,
+      "preservation_score": 0.49376220703125,
+      "overall_accuracy": 0.7401118232995048,
+      "success": true
+    },
+    {
+      "selfie_id": 1232,
+      "selfie_filename": "CF66.jpg",
+      "glasses_id": "98809b9e-add3-4c8d-b7d1-ff3469c3b1cf",
+      "glasses_brand": "Brendel",
+      "alignment_score": 0.9653599924958675,
+      "realism_score": 0.6251932014296797,
+      "preservation_score": 0.7293924967447916,
+      "overall_accuracy": 0.7925197064506884,
+      "success": true
+    },
+    {
+      "selfie_id": 1190,
+      "selfie_filename": "AM777.jpg",
+      "glasses_id": "6933fef5-2218-4a75-9ee3-cda6324a2b77",
+      "glasses_brand": "Marc O'Polo",
+      "alignment_score": 0.9906410222706262,
+      "realism_score": 0.794014514121523,
+      "preservation_score": 0.496539306640625,
+      "overall_accuracy": 0.783422555136895,
+      "success": true
+    },
+    {
+      "selfie_id": 1269,
+      "selfie_filename": "AF421.jpg",
+      "glasses_id": "7b7f7394-00c9-4a30-9107-ff8ee929dc8c",
+      "glasses_brand": "Brendel",
+      "alignment_score": 0.9917745050599082,
+      "realism_score": 0.8314243738769364,
+      "preservation_score": 0.6000000000000001,
+      "overall_accuracy": 0.8261371141870443,
+      "success": true
+    },
+    {
+      "selfie_id": 1108,
+      "selfie_filename": "AF540.jpg",
+      "glasses_id": "72ac6b10-d513-4766-a73b-2e12dd1e3b4c",
+      "glasses_brand": "HUMPHREY'S eyewear",
+      "alignment_score": 0.9880691643841919,
+      "realism_score": 0.7989822898539715,
+      "preservation_score": 0.7418741861979166,
+      "overall_accuracy": 0.8574846085692431,
+      "success": true
+    },
+    {
+      "selfie_id": 1184,
+      "selfie_filename": "CM25.jpg",
+      "glasses_id": "78ca40a5-2a3c-41f4-a83d-41fbcd649c1a",
+      "glasses_brand": "Marc O'Polo",
+      "alignment_score": 0.9860604728914256,
+      "realism_score": 0.7154133563479917,
+      "preservation_score": 0.5590108235677083,
+      "overall_accuracy": 0.7767514431312803,
+      "success": true
+    },
+    {
+      "selfie_id": 1146,
+      "selfie_filename": "AM34.jpg",
+      "glasses_id": "32962f21-db7e-4ea1-a05f-4b36c4e2ef99",
+      "glasses_brand": "Jisco",
+      "alignment_score": 0.9947197337888957,
+      "realism_score": 0.7085862439222329,
+      "preservation_score": 0.4149658203125,
+      "overall_accuracy": 0.7349535127859781,
+      "success": true
+    }
+  ]
+}
