@@ -1,0 +1,20 @@
+virtual-tryon-project/
+├── config/
+│   └── database_config.py          # Database connection
+├── data_processing/
+│   ├── __init__.py
+│   ├── dataset_downloader.py       # Download & extract SCUT dataset
+│   └── selfie_processor.py         # Process & store selfies in DB
+├── database/
+│   ├── __init__.py
+│   └── table_creator.py            # Create selfies table
+├── core/
+│   ├── __init__.py
+│   ├── virtual_tryon.py            # Your main try-on function
+│   └── image_utils.py              # Image processing utilities
+├── demo/
+│   ├── __init__.py
+│   └── run_demo.py                 # Main demo script
+├── requirements.txt                # Dependencies
+├── setup.py                       # Setup script
+└── README.md                       # Instructions
