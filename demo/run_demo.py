@@ -269,7 +269,7 @@ class VirtualTryOnDemo:
                 save_result=save_path
             )
             
-            logger.info(f"Selfie iamge name: {selfie_img_name}")
+            logger.info(f"Selfie image name: {selfie_img_name}")
             logger.info(f"Glasses image url: {glasses_url}")
             gl_ext = glasses_url.split('.')[-1] # Extract the image extension of glasses
             if gl_ext not in ("png", "webp"):
