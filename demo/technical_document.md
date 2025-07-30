@@ -19,7 +19,7 @@ And the full python implementation is wrritten in demo/kernal_codes_demo.ipynb w
   - The nose bridge line between the nose root and the nose tip.
 - **Reasoning**: This ensures the glasses are aligned to the natural position on the nose bridge, independent of face shape or symmetry.
 
-  <img src="face_detection.png" width="400"/>
+  <img src="face_geometry.png" width="600"/>
 
 ### Step 2: Remove Lenses
 
