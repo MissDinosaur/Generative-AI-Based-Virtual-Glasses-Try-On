@@ -6,7 +6,7 @@ This virtual try-on system overlays glasses onto a selfie image using facial lan
 
 Here, how to overlay the glasses onto selfie according to the geometry of face and glasses is explained.
 
-And the full python implementation is wrritten in demo/kernel_codes_demo.ipynb which you can test your slfie and glasses url directly.
+And the full python implementation is wrritten in demo/virtual_tryon_core.ipynb which you can test your slfie and glasses url directly.
 ---
 
 ## Technical Workflow
