@@ -108,7 +108,7 @@ virtual-tryon-project/
 │
 ├── 📁 demo/
 │   ├── run_demo.py                 # Complete program demonstration script
-│   └── virtual_tryon_core.ipynb    # Core implementation of glasses try-on with runnable demo and adjustable functions
+│   └── virtual_tryon_core.ipynb    # Core implementation of virtual glasses try-on with runnable demo and adjustable functions
 │
 ├── 📁 doc/                         # Detailed technical docs and project achitecture diagram
 |
