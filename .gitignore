@@ -7,7 +7,6 @@ notebooks/
 *.xlsx
 
 # Any fram images
-demo/glasses/
 demo/output/*.[jJ][pP][g]
 demo/output/*.[jJ][pP][eE][g]
 demo/output/*.[pP][nN][g]

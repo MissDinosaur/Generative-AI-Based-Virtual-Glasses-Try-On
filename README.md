@@ -101,7 +101,8 @@ virtual-tryon-project/
 │
 ├── 📁 demo/
 │   ├── run_demo.py                 # Complete demonstration script
-│   └── kernal_codes_demo.ipynb     # Kernal codes centralized in one notebook, used to do fast experiment
+│   ├── kernal_codes_demo.ipynb     # Kernal codes centralized in one notebook, used to do fast experiment
+│   └── technical_document.md       
 │
 ├── 📁 evaluation/
 │   ├── accuracy_calculator.py      # Quality metrics & evaluation
