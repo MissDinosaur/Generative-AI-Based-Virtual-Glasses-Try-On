@@ -19,14 +19,14 @@ And the full python implementation is wrritten in demo/kernal_codes_demo.ipynb w
   - The nose bridge line between the nose root and the nose tip.
 - **Reasoning**: This ensures the glasses are aligned to the natural position on the nose bridge, independent of face shape or symmetry.
 
-  <img src="face_geometry.png" width="300"/>
+  <img src="illustration/face_geometry.png" width="300"/>
 
 ### Step 2: Remove Lenses
 
 - Removes the lenses area (including temples / arms inside) from the glasses image and make it transparent using HSV color thresholding.
 - Applies convex hulls to create a cleaner mask, ensuring the eye area remains visible after overlay.
 
-  <img src="remove_glasses_arms.png" width="600"/>
+  <img src="illustration/remove_glasses_arms.png" width="600"/>
 
 ### Step 3: Compute Glasses Center ($C_2$)
 
@@ -36,7 +36,7 @@ And the full python implementation is wrritten in demo/kernal_codes_demo.ipynb w
   - p_r: The top-third height point of the right lens.
 - **Reasoning**: This placement ensures the center is close to the nose pad area, enabling natural alignment with $C_1$.
 
-  <img src="glasses_geometry.png" width="500"/>
+  <img src="illustration/glasses_geometry.png" width="500"/>
 
 ### Step 4: Rotation & Scaling
 
@@ -45,14 +45,14 @@ And the full python implementation is wrritten in demo/kernal_codes_demo.ipynb w
   - This is done by computing the Euclidean distance between the user's ears.
   - Maintains aspect ratio while resizing.
 
-  <img src="rotate_glasses.png" width="600"/>
+  <img src="illustration/rotate_glasses.png" width="600"/>
 
 ### Step 5: Overlay Glasses
 
 - The glasses image is finally overlaid onto the selfie with galsses center $C_1$ overlaid at facial center $C_1$.
 - Alpha blending is used to ensure realistic transparency and avoid hard edges.
 
-  <img src="overlay_results_display.png" width="600"/>
+  <img src="illustration/overlay_results_display.png" width="600"/>
 
 ---
 
