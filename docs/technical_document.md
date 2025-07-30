@@ -19,22 +19,24 @@ And the full python implementation is wrritten in demo/kernal_codes_demo.ipynb w
   - The nose bridge line between the nose root and the nose tip.
 - **Reasoning**: This ensures the glasses are aligned to the natural position on the nose bridge, independent of face shape or symmetry.
 
-  <img src="face_geometry.png" width="600"/>
+  <img src="face_geometry.png" width="300"/>
 
 ### Step 2: Remove Lenses
 
 - Removes the lenses area (including temples / arms inside) from the glasses image and make it transparent using HSV color thresholding.
 - Applies convex hulls to create a cleaner mask, ensuring the eye area remains visible after overlay.
 
+  <img src="remove_glasses_arms.png" width="600"/>
 
 ### Step 3: Compute Glasses Center ($C_2$)
 
 - **Goal**: Compute the logical center of the glasses image.
 - **Definition**: $C_2$ is the midpoint of a line drawn between two points:
-  - The top-third height point of the left lens.
-  - The top-third height point of the right lens.
+  - p_l: The top-third height point of the left lens.
+  - p_r: The top-third height point of the right lens.
 - **Reasoning**: This placement ensures the center is close to the nose pad area, enabling natural alignment with $C_1$.
 
+  <img src="glasses_geometry.png" width="500"/>
 
 ### Step 4: Rotation & Scaling
 
@@ -43,10 +45,14 @@ And the full python implementation is wrritten in demo/kernal_codes_demo.ipynb w
   - This is done by computing the Euclidean distance between the user's ears.
   - Maintains aspect ratio while resizing.
 
+  <img src="rotate_glasses.png" width="600"/>
+
 ### Step 5: Overlay Glasses
 
-- The glasses image is finally overlaid onto the selfie at point $C_1$.
+- The glasses image is finally overlaid onto the selfie with galsses center $C_1$ overlaid at facial center $C_1$.
 - Alpha blending is used to ensure realistic transparency and avoid hard edges.
+
+  <img src="overlay_results_display.png" width="600"/>
 
 ---
 
@@ -74,7 +80,7 @@ Detects facial landmarks and returns critical facial keypoints.
 Calculates the logical visual center ($C_2$) of the glasses image.
 
 #### `remove_lens_region(img_rgba)`
-Detects bright lens areas and makes them transparent for better try-on realism.
+Removes the glasses' lens region (including anything inside, like temple arms) and make lens region transparent by setting those areas to transparent (alpha = 0) for better try-on realism.
 
 #### `rotate_galsses_image(img_rgba, angle)`
 Rotates the glasses image around its center with specific angle.
@@ -88,12 +94,12 @@ The main pipeline for:
 2. Detecting facial keypoints
 3. Processing the glasses image
 4. Rotating and resizing the glasses
-5. Overlaying the final result
+5. Overlaying two processed images to gennerate the final result
 
 ---
 
 ## Assumptions & Design Choices
-
+- The glasses image has the alpha channel
 - The glasses must always be centered on the **nose bridge** — this avoids drift from eye misalignment or face shape variance.
 - The **scaling** is derived from facial proportions (distance between ears), ensuring size adaptation for different face sizes.
 - The **rotation** uses the angle between the eys to naturally tilt the glasses according to the user's face posture.
@@ -134,5 +140,5 @@ The main pipeline for:
 
 ```python
 # The glasses image must have alpha channel.
-main_tryon("your_selfie.jpg", "https://your-cdn.com/your_glasses.png")
+main_tryon("your_selfie.jpg", "https://your-cdn.com/your_glasses_url.png")
 ```
