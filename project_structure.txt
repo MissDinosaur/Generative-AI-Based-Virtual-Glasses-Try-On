@@ -1,20 +1,109 @@
 virtual-tryon-project/
 ├── config/
-│   └── database_config.py          # Database connection
+│   └── database_config.py          # Database connection & credentials
 ├── data_processing/
 │   ├── __init__.py
 │   ├── dataset_downloader.py       # Download & extract SCUT dataset
 │   └── selfie_processor.py         # Process & store selfies in DB
 ├── database/
 │   ├── __init__.py
-│   └── table_creator.py            # Create selfies table
+│   └── table_creator.py            # Create selfies table schema
 ├── core/
 │   ├── __init__.py
-│   ├── virtual_tryon.py            # Your main try-on function
+│   ├── virtual_tryon.py            # Main try-on algorithm & face detection
 │   └── image_utils.py              # Image processing utilities
 ├── demo/
 │   ├── __init__.py
-│   └── run_demo.py                 # Main demo script
-├── requirements.txt                # Dependencies
-├── setup.py                       # Setup script
-└── README.md                       # Instructions
+│   └── run_demo.py                 # Main demo script with database integration
+├── evaluation/
+│   ├── __init__.py
+│   └── accuracy_calculator.py      # Quality metrics & performance evaluation
+├── docs/
+│   ├── architecture_diagram.md     # System architecture & data flow
+│   ├── command_reference.md        # CLI commands & usage examples
+│   └── executive_presentation.md   # CEO/Manager presentation content
+├── output/                         # Generated try-on results (auto-created)
+├── logs/                          # System logs (auto-created)
+├── temp/                          # Temporary files (auto-created)
+├── requirements.txt               # Python dependencies
+├── setup.py                       # Project setup & installation script
+├── simple_pipeline.py             # CLI interface for batch/single processing
+├── avai_data.py                   # Quick data exploration script
+├── details.py                     # Dataset download & extraction utility
+├── fix_table.py                   # Database schema repair utility
+├── project_structure.txt          # This file - project organization
+└── README.md                      # Project documentation & instructions
+
+# Key Files Explained:
+# ==================
+# 
+# 🚀 MAIN ENTRY POINTS:
+#    ├── demo/run_demo.py           → Complete demo with setup
+#    ├── simple_pipeline.py         → CLI for production use
+#    └── avai_data.py              → Check available data
+#
+# 🧠 CORE ENGINE:
+#    ├── core/virtual_tryon.py      → Face detection + overlay algorithm
+#    ├── core/image_utils.py        → Image processing utilities
+#    └── evaluation/accuracy_calculator.py → Quality metrics
+#
+# 💾 DATA MANAGEMENT:
+#    ├── data_processing/dataset_downloader.py → SCUT dataset handling
+#    ├── data_processing/selfie_processor.py   → Database storage
+#    ├── database/table_creator.py             → Schema management
+#    └── config/database_config.py             → DB connection
+#
+# 📊 OUTPUTS & RESULTS:
+#    ├── output/                    → Generated images (selfie_name + glasses_name.jpg)
+#    ├── logs/                      → System logs & debugging
+#    └── temp/                      → Temporary processing files
+#
+# 📚 DOCUMENTATION:
+#    ├── docs/architecture_diagram.md    → Technical architecture
+#    ├── docs/command_reference.md       → CLI usage guide
+#    ├── docs/executive_presentation.md  → Business presentation
+#    └── README.md                       → Getting started guide
+#
+# 🔧 UTILITIES:
+#    ├── setup.py                   → Automated project setup
+#    ├── details.py                 → Manual dataset download
+#    ├── fix_table.py              → Database repair tool
+#    └── requirements.txt           → Dependencies list
+
+# Sample Usage Commands:
+# =====================
+# 
+# Setup:
+#   python setup.py                              # Install dependencies
+#   python demo/run_demo.py                      # Complete setup + demo
+#
+# Quick Operations:
+#   python avai_data.py                          # Check available data
+#   python simple_pipeline.py --mode single     # Single try-on
+#   python simple_pipeline.py --mode batch --batch-size 10  # Batch processing
+#
+# Evaluation:
+#   python evaluation/accuracy_calculator.py     # Quality assessment
+#
+# Output Files:
+#   output/AF001_RayBan_Aviator_Classic.jpg     # Meaningful filenames
+#   output/CM045_Oakley_Holbrook_Square.jpg     # selfie_name + glasses_name
+
+
+virtual-tryon-project/
+├── config/
+├── data_processing/
+├── database/
+├── core/
+├── demo/
+├── evaluation/
+├── docs/
+├── requirements.txt
+├── setup.py
+├── simple_pipeline.py
+├── avai_data.py
+├── details.py
+├── fix_table.py
+├── project_structure.txt
+├── README.md
+└── cleanup.py  # Optional - can delete after use
