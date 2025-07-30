@@ -48,7 +48,8 @@ cd virtual-tryon-project
 python -m venv <venvName>  # Replace <venvName> by your venv name 
 
 # Activate the virtual environment <venvName>:
-Windows (CMD/Powershell): <venvName>\Scripts\activate
+#Windows (CMD/Powershell):
+<venvName>\Scripts\activate
 # Windows (git bash): source <venvName>/Scripts/activate
 # macOS/Linux: source <venvName>/bin/activate
 
@@ -106,10 +107,10 @@ virtual-tryon-project/
 │   └── image_utils.py              # Image processing utilities
 │
 ├── 📁 demo/
-│   ├── run_demo.py                 # Complete demonstration script
-│   └── kernal_codes_demo.ipynb     # Kernal codes centralized in one notebook, used to do fast experiment
+│   ├── run_demo.py                 # Complete program demonstration script
+│   └── virtual_tryon_core.ipynb    # Core implementation of glasses try-on with runnable demo and adjustable functions
 │
-├── 📁 doc/                         # Technical docs locate here
+├── 📁 doc/                         # Detailed technical docs and project achitecture diagram
 |
 ├── 📁 evaluation/
 │   ├── accuracy_calculator.py      # Quality metrics & evaluation
@@ -119,7 +120,9 @@ virtual-tryon-project/
 │
 ├── setup.py                       # Project setup script
 ├── avai_data.py                   # Data exploration utility
-└── simple_pipeline.py             # Command-line interface
+├── simple_pipeline.py             # Command-line interface
+├── .env.example
+└── requirements.txt
 ```
 
 ## 🔬 Technical Deep Dive
