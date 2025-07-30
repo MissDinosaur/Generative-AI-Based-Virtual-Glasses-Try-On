@@ -22,14 +22,7 @@ And the full python implementation is wrritten in demo/virtual_tryon_core.ipynb 
 
   <img src="illustration/face_geometry.png" width="300"/>
 
-### Step 2: Remove Lenses
-
-- Removes the lenses area (including temples / arms inside) from the glasses image and make it transparent using HSV color thresholding.
-- Applies convex hulls to create a cleaner mask, ensuring the eye area remains visible after overlay.
-
-  <img src="illustration/remove_glasses_arms.png" width="600"/>
-
-### Step 3: Compute Glasses Center ($C_2$)
+### Step 2: Compute Glasses Center ($C_2$)
 
 - **Goal**: Compute the logical center of the glasses image.
 - **Definition**: $C_2$ is the midpoint of a line drawn between two points:
@@ -38,6 +31,13 @@ And the full python implementation is wrritten in demo/virtual_tryon_core.ipynb 
 - **Reasoning**: This placement ensures the center is close to the nose pad area, enabling natural alignment with $C_1$.
 
   <img src="illustration/glasses_geometry.png" width="500"/>
+
+### Step 3: Clear Lenses area and make lens transparent
+
+- Removes the lenses area (including temples / arms inside) from the glasses image and make it transparent using HSV color thresholding.
+- Applies convex hulls to create a cleaner mask, ensuring the eye area remains visible after overlay.
+
+  <img src="illustration/remove_glasses_arms.png" width="600"/>
 
 ### Step 4: Rotation & Scaling
 
