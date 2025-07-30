@@ -33,7 +33,7 @@ A sophisticated AI-powered virtual glasses try-on system that uses computer visi
 
 ### Prerequisites
 ```bash
-# Ensure you have Python 3.8+ and PostgreSQL installed
+# Ensure you have Python 3.8+ (<= 3.11) and PostgreSQL installed
 python --version
 psql --version
 ```
@@ -44,6 +44,14 @@ psql --version
 git clone <your-repo-url>
 cd virtual-tryon-project
 
+# Create a virtual environment named <venvName> (Recommended Python version 3.11 or 3.10):
+python -m venv <venvName>  # Replace <venvName> by your venv name 
+
+# Activate the virtual environment <venvName>:
+Windows (CMD/Powershell): <venvName>\Scripts\activate
+# Windows (git bash): source <venvName>/Scripts/activate
+# macOS/Linux: source <venvName>/bin/activate
+
 # Install dependencies
 pip install -r requirements.txt
 
@@ -52,15 +60,13 @@ python setup.py
 ```
 
 ### 2. Configure Database
-Update `config/database_config.py` with your PostgreSQL credentials:
-```python
-DATABASE_CONFIG = {
-    'host': 'your-host',
-    'database': 'your-database',
-    'user': 'your-username',
-    'password': 'your-password',
-    'schema': 'your-schema'
-}
+Rename .env.example as .env and edit according to your PostgreSQL credentials:
+```bash
+POSTGRES_HOST = your_host_ip
+POSTGRES_PORT = your_port
+POSTGRES_USER = your_user_name
+POSTGRES_PASSWORD = your_password
+POSTGRES_DB = your_db_name
 ```
 
 ### 3. Run Demo
@@ -101,9 +107,10 @@ virtual-tryon-project/
 │
 ├── 📁 demo/
 │   ├── run_demo.py                 # Complete demonstration script
-│   ├── kernal_codes_demo.ipynb     # Kernal codes centralized in one notebook, used to do fast experiment
-│   └── technical_document.md       
+│   └── kernal_codes_demo.ipynb     # Kernal codes centralized in one notebook, used to do fast experiment
 │
+├── 📁 doc/                         # Technical docs locate here
+|
 ├── 📁 evaluation/
 │   ├── accuracy_calculator.py      # Quality metrics & evaluation
 │   └── results/                    # Evaluation reports
