@@ -6,7 +6,7 @@ This virtual try-on system overlays glasses onto a selfie image using facial lan
 
 Here, how to overlay the glasses onto selfie according to the geometry of face and glasses is explained.
 
-And the full python implementation is wrritten in demo/kernal_codes_demo.ipynb which you can test your slfie and glasses url directly.
+And the full python implementation is wrritten in demo/kernel_codes_demo.ipynb which you can test your slfie and glasses url directly.
 ---
 
 ## Technical Workflow
@@ -15,8 +15,8 @@ And the full python implementation is wrritten in demo/kernal_codes_demo.ipynb w
 
 - **Goal**: Accurately locate the point on the selfie where the glasses should be centered.
 - **Definition**: The face center ($C_1$) is defined as the intersection of:
-  - The line connecting the centers of the left and right pupils.
-  - The nose bridge line between the nose root and the nose tip.
+  - x: The line connecting the centers of the left and right pupils.
+  - y: The nose bridge line between the nose root and the nose tip.
 - **Reasoning**: This ensures the glasses are aligned to the natural position on the nose bridge, independent of face shape or symmetry.
 
   <img src="illustration/face_geometry.png" width="300"/>
