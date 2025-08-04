@@ -97,14 +97,14 @@ CORE ENGINE
 
 DEMO & INTERFACE
 ├── run_demo.py ─────────────► Complete demonstration
-├── simple_demo.py ──────────► Interactive interface
 └── simple_pipeline.py ──────► CLI commands
 
 EVALUATION SYSTEM
 └── accuracy_calculator.py ──► Quality metrics & reporting
-    ├── Alignment accuracy (40%)
-    ├── Realism score (30%)
-    └── Preservation score (30%)
+│   ├── Alignment accuracy (~90%)
+│   ├── Realism score (~70%)
+│   └── Preservation score (~50%)
+└── Overall accuracy (~75%) ──────────► Utility functions
 ```
 
 ## 🔧 Technology Stack

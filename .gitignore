@@ -7,7 +7,6 @@ notebooks/
 *.xlsx
 
 # Any fram images
-demo/glasses/
 demo/output/*.[jJ][pP][g]
 demo/output/*.[jJ][pP][eE][g]
 demo/output/*.[pP][nN][g]
@@ -290,3 +289,10 @@ cython_debug/
 
 # Project-specific ignores
 # Add any project-specific files/folders here
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+.env.test

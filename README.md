@@ -33,7 +33,7 @@ A sophisticated AI-powered virtual glasses try-on system that uses computer visi
 
 ### Prerequisites
 ```bash
-# Ensure you have Python 3.8+ and PostgreSQL installed
+# Ensure you have Python 3.8+ (<= 3.11) and PostgreSQL installed
 python --version
 psql --version
 ```
@@ -44,6 +44,15 @@ psql --version
 git clone <your-repo-url>
 cd virtual-tryon-project
 
+# Create a virtual environment named <venvName> (Recommended Python version 3.11 or 3.10):
+python -m venv <venvName>  # Replace <venvName> by your venv name 
+
+# Activate the virtual environment <venvName>:
+#Windows (CMD/Powershell):
+<venvName>\Scripts\activate
+# Windows (git bash): source <venvName>/Scripts/activate
+# macOS/Linux: source <venvName>/bin/activate
+
 # Install dependencies
 pip install -r requirements.txt
 
@@ -52,15 +61,13 @@ python setup.py
 ```
 
 ### 2. Configure Database
-Update `config/database_config.py` with your PostgreSQL credentials:
-```python
-DATABASE_CONFIG = {
-    'host': 'your-host',
-    'database': 'your-database',
-    'user': 'your-username',
-    'password': 'your-password',
-    'schema': 'your-schema'
-}
+Rename .env.example as .env and edit according to your PostgreSQL credentials:
+```bash
+POSTGRES_HOST = your_host_ip
+POSTGRES_PORT = your_port
+POSTGRES_USER = your_user_name
+POSTGRES_PASSWORD = your_password
+POSTGRES_DB = your_db_name
 ```
 
 ### 3. Run Demo
@@ -85,33 +92,43 @@ python simple_pipeline.py --mode single --selfie-id 1215 --glasses-id "689e52b6-
 
 ```
 virtual-tryon-project/
-├── 📁 config/
-│   └── database_config.py          # Database connection & configuration
-│
-├── 📁 data_processing/
-│   ├── dataset_downloader.py       # SCUT dataset download & extraction
-│   └── selfie_processor.py         # Image processing & database storage
-│
-├── 📁 database/
-│   └── table_creator.py            # Database schema creation
-│
-├── 📁 core/
-│   ├── virtual_tryon.py            # Main try-on algorithms
+├── config/
+│   └── database_config.py          # Database connection & credentials
+├── data_processing/
+│   ├── __init__.py
+│   ├── dataset_downloader.py       # Download & extract SCUT dataset
+│   └── selfie_processor.py         # Process & store selfies in DB
+├── database/
+│   ├── __init__.py
+│   └── table_creator.py            # Create selfies table schema
+├── core/
+│   ├── __init__.py
+│   ├── virtual_tryon.py            # Main try-on algorithm & face detection
 │   └── image_utils.py              # Image processing utilities
-│
-├── 📁 demo/
-│   ├── run_demo.py                 # Complete demonstration script
-│   └── kernal_codes_demo.ipynb     # Kernal codes centralized in one notebook, used to do fast experiment
-│
-├── 📁 evaluation/
-│   ├── accuracy_calculator.py      # Quality metrics & evaluation
-│   └── results/                    # Evaluation reports
-│
-├── 📁 output/                     # Generated try-on results
-│
-├── setup.py                       # Project setup script
-├── avai_data.py                   # Data exploration utility
-└── simple_pipeline.py             # Command-line interface
+├── demo/
+│   ├── __init__.py
+│   ├── run_demo.py                 # Main demo script with database integration
+│   └── virtual_tryon_core.ipynb    # Core implementation notebook with runnable demo
+├── evaluation/
+│   ├── __init__.py
+│   └── accuracy_calculator.py      # Quality metrics & performance evaluation
+├── docs/
+│   ├── illustration/
+│   ├── architecture_diagram.md     # System architecture & data flow
+│   ├── command_reference.md        # CLI commands & usage examples
+│   └── project_structure.txt       # This file - project organization
+│   └── technical_document.md       # Technical implementation details
+├── output/                        # Generated try-on results (auto-created)
+├── logs/                          # System logs (auto-created)
+├── temp/                          # Temporary files (auto-created)
+├── requirements.txt               # Python dependencies (current working approach)
+├── setup.py                       # Project setup & installation script
+├── simple_pipeline.py             # CLI interface for batch/single processing
+├── avai_data.py                   # Quick data exploration script
+├── details.py                     # Dataset download & extraction utility
+├── fix_table.py                   # Database schema repair utility
+├── .gitignore                     # Git ignore patterns
+└── README.md                      # Project documentation & instructions
 ```
 
 ## 🔬 Technical Deep Dive
