@@ -6,13 +6,13 @@ This virtual try-on system overlays glasses onto a selfie image using facial lan
 
 Here, how to overlay the glasses onto selfie according to the geometry of face and glasses is explained.
 
-And the full python implementation is wrritten in demo/virtual_tryon_core.ipynb which you can test your selfie and glasses url directly.
+And the full python implementation is wrritten in demo/virtual_tryon_core.ipynb which you can test the try-on effect with your selfie and glasses url directly.
 
 ---
 
 ## Technical Workflow
 
-### Step 1: Detect Face Center ($C_1$)
+### Step 1: Detect facial key points using MediaPipe​
 
 - **Goal**: Accurately locate the point on the selfie where the glasses should be centered.
 - **Definition**: The face center ($C_1$) is defined as the intersection of:
@@ -39,7 +39,7 @@ And the full python implementation is wrritten in demo/virtual_tryon_core.ipynb 
 
   <img src="illustration/remove_glasses_arms.png" width="600"/>
 
-### Step 4: Rotation & Scaling
+### Step 4: Scale & Rotate Glasses
 
 - **Rotation**: The glasses are rotated to match the tilt of the eye line (between the two pupils).
 - **Scaling**: Glasses are resized to match the facial width by aligning the frame hinge (temple area) with the ears.
